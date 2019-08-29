@@ -1,0 +1,49 @@
+body {
+  font-family: Trebuchet MS;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  font-size: calc(
+    24px + 6 * ((100vw - 320px) / 680)
+  ); /*https://css-tricks.com/snippets/css/fluid-typography/*/
+  position: fixed;
+  bottom: 0;
+  left: 3em;
+}
+header h1 {
+  font-weight: 1;
+  padding: 0.25em;
+  margin: 0;
+  background-color: rgba(225, 255, 205, 0.9);
+  white-space: nowrap;
+  order: 2;
+}
+header p {
+  background-color: rgba(215, 125, 205, 0.9);
+  margin: 0 0 0.25em;
+  font-size: 1.5em;
+  font-weight: 1;
+  padding: 0.25em;
+  order: 1;
+}
+
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
