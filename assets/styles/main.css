@@ -31,7 +31,7 @@ body > header {
   z-index: 100;
   width: 100vw;
   transform-origin: 100% 100%;
-  transition: all 0.5s 1s;
+  transition: all 0.25s 0.25s;
 }
 body > header h1 {
   display: flex;
@@ -61,7 +61,7 @@ body > header p {
   font-weight: 1;
   padding: 0.25em;
   order: 1;
-  transition: all 1s;
+  transition: all 0.25s;
   z-index: 5;
 }
 article {
