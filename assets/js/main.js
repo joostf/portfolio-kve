@@ -1,3 +1,4 @@
+/* based on https://www.kirupa.com/html5/detecting_if_the_user_is_idle_or_inactive.htm */
 const ms = 2000;
 let timer;
 setup();
