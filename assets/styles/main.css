@@ -63,6 +63,7 @@ body > header p {
   z-index: 5;
 }
 article {
+  width: 100%;
   padding: 0 3.25rem;
   margin: 0 -3.25rem;
   font-size: 1.5em;
@@ -103,7 +104,7 @@ article > p {
   color: #000;
   margin: 0 3.25rem;
   transition: opacity 0.25s;
-  padding: 0.5rem 0.5rem;
+  padding: 1rem 0.5rem;
   position: absolute;
   left: 0;
   z-index: 10;
