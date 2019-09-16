@@ -4,7 +4,7 @@ let timer;
 setup();
 
 function setup() {
-  const events = ['mousemove', 'mousedown', 'keypress', 'touchmove']; // 'MSPointerMove''DOMMouseScroll', 'mousewheel'
+  const events = ['mousemove', 'mousedown', 'keypress', 'touchend']; // 'MSPointerMove''DOMMouseScroll', 'mousewheel'
   events.forEach(event => {
     this.addEventListener(event, resetTimer, false);
   });
