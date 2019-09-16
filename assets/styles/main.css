@@ -1,6 +1,7 @@
 :root {
   --primary: 170, 255, 221;
   --secondary: 215, 125, 205;
+  --pos: 0;
 }
 * {
   box-sizing: border-box;
@@ -13,10 +14,11 @@ body {
   margin: 0;
   padding-top: 100vh;
 }
+
 img {
   width: 100vw;
 }
-header {
+body > header {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -28,53 +30,88 @@ header {
   right: 0;
   z-index: 100;
 }
-header h1 {
+body > header h1 {
+  display: flex;
+  flex-direction: row;
   font-weight: 1;
   padding: 0.25em;
   margin: 0;
-  background-color: rgba(var(--primary), 0.7);
+  background-color: rgba(var(--primary), 1);
   white-space: nowrap;
   order: 2;
+  z-index: 10;
 }
-header p {
-  background-color: rgba(var(--secondary), 0.7);
-  margin: 0 0 0.25em;
+body > header h1 i {
+  margin-right: 0.25em;
+  transition: all 0.25s 0.5s;
+  width: auto;
+  max-width: 3em;
+}
+body > header h1 i:last-of-type {
+  margin-right: 0;
+}
+body > header p {
+  background-color: rgba(var(--secondary), 1);
+  margin: 0;
   font-size: 1.5em;
   font-weight: 1;
   padding: 0.25em;
   order: 1;
+  transition: all 1s;
+  z-index: 5;
 }
 article {
   padding: 0 3.25rem;
-  width: 100vw;
+  margin: 0 -3.25rem;
   font-size: 1.5em;
   font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 article img {
-  margin: 0 -3.25rem;
   padding: 0;
 }
-article div {
+article header {
   position: sticky;
-  margin: 0 -3.25rem;
-  padding: 0;
   top: 0;
   z-index: 50;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100vw;
 }
 article h2,
-article p {
+article header p {
+  position: relative;
   background-color: rgba(var(--primary), 1);
   margin: 0;
+  height: calc(1.5em + 0.5rem);
+  width: 100vw;
+  white-space: nowrap;
+  overflow-x: auto;
+  padding: 0.25rem 0.5rem;
 }
-article p {
+article header p {
+  padding-top: 0;
+}
+article > p {
   background-color: rgba(var(--secondary), 1);
   color: #000;
-  display: none;
+  margin: 0 3.25rem;
+  transition: opacity 0.25s;
+  padding: 0.5rem 0.5rem;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+  top: 4.25em;
 }
+article img {
+  transition: transform 0.25s 0.25s;
+  transform: translateY(0);
+}
+
 video {
   position: fixed;
   top: 50%;
@@ -88,4 +125,24 @@ video {
   background: url('/assets/images/poster.png') no-repeat;
   background-size: cover;
   transition: 1s opacity;
+}
+
+/* Inactivity */
+body.inactive article > p {
+  opacity: 0;
+}
+body.inactive > header h1 i {
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+}
+body.inactive > header p {
+  transform: translateX(10em);
+  transition-delay: 0.5s;
+}
+
+@media (min-width: 30em) {
+  article > p {
+    max-width: 30em;
+  }
 }
